@@ -19,8 +19,8 @@ const Collapsible = ({ children, label }: Props) => {
 
 	if (domLoaded && !largeScreen) {
 		return (
-			<Group className='container'>
-				<Button className='toggle' onClick={() => setIsOpen(!isOpen)}>
+			<Group>
+				<Button className={styles.toggle} onClick={() => setIsOpen(!isOpen)}>
 					{label}
 				</Button>
 

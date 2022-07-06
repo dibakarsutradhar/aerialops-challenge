@@ -31,6 +31,14 @@ export const mockData = [
 				documentId: 3,
 				documentName: 'The Little Things Give You Away',
 			},
+			{
+				documentId: 4,
+				documentName: 'There Might Be Coffee',
+			},
+			{
+				documentId: 5,
+				documentName: 'The Wildcard Philosophy',
+			},
 		],
 	},
 	{

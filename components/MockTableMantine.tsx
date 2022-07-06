@@ -8,13 +8,16 @@ const MockDataTable = () => {
 			<td>{element.applicationId}</td>
 			<td>{element.name}</td>
 			<td>{element.salary}</td>
-			<td style={{ overflow: 'hidden' }}>
+			<td style={{ overflowX: 'hidden' }}>
 				<Collapsible label='Document'>
 					{element.documents.map((data) => (
 						<Card
 							shadow='sm'
 							p='sm'
-							style={{ float: 'left', marginRight: '5px' }}
+							style={{
+								float: 'left',
+								marginRight: '5px',
+							}}
 						>
 							{data.documentName}
 						</Card>

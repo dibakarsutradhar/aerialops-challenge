@@ -108,78 +108,19 @@
 	margin-left: 0.5rem;
 }
 
-.lblToggle {
-	display: block;
-
-	font-weight: bold;
-	text-align: center;
-
-	padding: 1rem;
-	color: #0070f3;
-	cursor: pointer;
-
-	border-radius: 7px;
-	transition: all 0.25s ease-out;
-}
-
-.lblToggle:hover {
-	color: grey;
-}
-
-.lblToggle::before {
-	content: '>';
-	display: inline-block;
-
-	border-top: 5px solid transparent;
-	border-bottom: 5px solid transparent;
-	border-left: 5px solid transparent;
-
-	margin-right: 0.7rem;
-	transform: translateY(-2px);
-
-	transition: transform 0.2s ease-out;
-}
-
-.collapsibleContent .contentInner {
-	background: rgba(250, 224, 66, 0.2);
-	border-bottom: 1px solid rgba(250, 224, 66, 0.45);
-	border-bottom-left-radius: 7px;
-	border-bottom-right-radius: 7px;
-}
-
-.collapsibleContent {
-	max-height: 0px;
-	overflow: hidden;
-	transition: max-height 0.25s ease-in-out;
-}
-
-.toggle:checked + .lblToggle + .collapsibleContent {
-	max-height: 100vh;
-}
-
-.toggle:checked + .lblToggle::before {
-	transform: rotate(90deg) translateX(-3px);
-}
-
-.toggle:checked + .lblToggle {
-	border-bottom-left-radius: 0;
-	border-bottom-right-radius: 0;
-}
-
 .content {
 	width: auto;
-	/* max-width: 20em; */
-	height: auto;
+	max-height: 15em;
 	margin-top: 5px;
 	border: 1px solid #686868;
 	display: none;
 	justify-content: center;
 	border-radius: 5px;
+	overflow-y: scroll;
 }
 
 .show {
-	display: flex;
-	flex-direction: column;
+	display: grid;
 }
 
 @media (max-width: 44em) {
