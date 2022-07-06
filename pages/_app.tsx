@@ -1,8 +1,14 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import '../styles/globals.css';
+import { MantineProvider, useMantineTheme } from '@mantine/core';
+import type { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+	const theme = useMantineTheme();
+	return (
+		<MantineProvider theme={theme}>
+			<Component {...pageProps} />
+		</MantineProvider>
+	);
 }
 
-export default MyApp
+export default MyApp;
