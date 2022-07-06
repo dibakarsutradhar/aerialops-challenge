@@ -116,7 +116,7 @@
 	display: none;
 	justify-content: center;
 	border-radius: 5px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 .show {

@@ -1,6 +1,7 @@
-import { Button, Group, Stack } from '@mantine/core';
+import { Button, Group, Stack, ThemeIcon } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { useEffect, useState } from 'react';
+import { ChevronDown, ChevronUp } from 'tabler-icons-react';
 import styles from '../styles/Home.module.css';
 
 interface Props {
@@ -19,8 +20,17 @@ const Collapsible = ({ children, label }: Props) => {
 
 	if (domLoaded && !largeScreen) {
 		return (
-			<Group>
+			<Group sx={{ display: 'grid', gap: '1px' }}>
 				<Button className={styles.toggle} onClick={() => setIsOpen(!isOpen)}>
+					{!isOpen ? (
+						<ThemeIcon>
+							<ChevronDown size={24} />
+						</ThemeIcon>
+					) : (
+						<ThemeIcon>
+							<ChevronUp size={24} />
+						</ThemeIcon>
+					)}
 					{label}
 				</Button>
 

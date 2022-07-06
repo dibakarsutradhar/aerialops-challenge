@@ -1,4 +1,4 @@
-import { Card, Group, Table } from '@mantine/core';
+import { Card, Group, Stack, Table } from '@mantine/core';
 import { mockData } from '../utils/mockData';
 import Collapsible from './Collapsible';
 
@@ -8,21 +8,23 @@ const MockDataTable = () => {
 			<td>{element.applicationId}</td>
 			<td>{element.name}</td>
 			<td>{element.salary}</td>
-			<td style={{ overflowX: 'hidden' }}>
-				<Collapsible label='Document'>
-					{element.documents.map((data) => (
-						<Card
-							shadow='sm'
-							p='sm'
-							style={{
-								float: 'left',
-								marginRight: '5px',
-							}}
-						>
-							{data.documentName}
-						</Card>
-					))}
-				</Collapsible>
+			<td style={{ overflow: 'hidden' }}>
+				<Stack sx={{ gap: '8px' }}>
+					<Collapsible label='Document'>
+						{element.documents.map((data) => (
+							<Card
+								shadow='sm'
+								p='sm'
+								style={{
+									float: 'left',
+									marginRight: '5px',
+								}}
+							>
+								{data.documentName}
+							</Card>
+						))}
+					</Collapsible>
+				</Stack>
 			</td>
 		</tr>
 	));

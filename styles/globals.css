@@ -18,3 +18,7 @@ a {
 input[type='checkbox'] {
 	display: none;
 }
+
+tr {
+	vertical-align: baseline;
+}
