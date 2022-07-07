@@ -7,21 +7,24 @@ import styles from '../styles/Home.module.css';
 interface Props {
 	children?: any;
 	label?: string;
+	// screenSize?: any;
 }
 
 const Collapsible = ({ children, label }: Props) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [domLoaded, setDomLoaded] = useState(false);
-	const largeScreen = useMediaQuery('(min-width: 900px)');
+	// const largeScreen = useMediaQuery('(min-width: 900px)');
+	// const minScreen = 900;
 
 	useEffect(() => {
 		setDomLoaded(true);
 	}, []);
 
-	if (domLoaded && !largeScreen) {
+	if (domLoaded) {
 		return (
 			<Group sx={{ display: 'grid', gap: '1px' }}>
 				<Button className={styles.toggle} onClick={() => setIsOpen(!isOpen)}>
+					{label}
 					{!isOpen ? (
 						<ThemeIcon>
 							<ChevronDown size={24} />
@@ -31,7 +34,6 @@ const Collapsible = ({ children, label }: Props) => {
 							<ChevronUp size={24} />
 						</ThemeIcon>
 					)}
-					{label}
 				</Button>
 
 				<Stack
@@ -44,8 +46,6 @@ const Collapsible = ({ children, label }: Props) => {
 				</Stack>
 			</Group>
 		);
-	} else {
-		return <Group>{children}</Group>;
 	}
 };
 
